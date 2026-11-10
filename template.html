@@ -40,13 +40,22 @@
   .tab.on{background:var(--panel);color:var(--text);font-weight:600;box-shadow:0 1px 2px rgba(16,24,40,.12)}
   .tab .n{font-size:11px;color:var(--text-3);margin-left:4px}
   .tab.on .n{color:var(--accent)}
-  .selects{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-  select{padding:6px 10px;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);cursor:pointer;max-width:230px;outline:none}
-  select:hover{border-color:#c9d1d9}
-  select:focus{border-color:var(--accent)}
-  select:disabled{opacity:.5;cursor:not-allowed}
+  .selects{display:flex;gap:8px;align-items:center}
+  select{
+    appearance:none;-webkit-appearance:none;-moz-appearance:none;
+    height:36px;padding:0 30px 0 13px;
+    border:1px solid var(--border);border-radius:9px;
+    background:var(--panel) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%238b949e' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat right 11px center;
+    color:var(--text);cursor:pointer;outline:none;
+    max-width:240px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+    font-size:13px;transition:border-color .15s, box-shadow .15s;
+  }
+  select:hover{border-color:#b6bec7}
+  select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(9,105,218,.12)}
+  select:disabled{opacity:.45;cursor:not-allowed;background-color:var(--bg)}
+  select:disabled:hover{border-color:var(--border)}
   .chips{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
-  .chip{border:1px solid var(--border);background:var(--panel);color:var(--text-2);padding:5px 11px;border-radius:999px;cursor:pointer;font-size:12.5px;user-select:none;transition:.12s}
+  .chip{border:1px solid var(--border);background:var(--panel);color:var(--text-2);padding:8px 13px;line-height:1;border-radius:999px;cursor:pointer;font-size:12.5px;user-select:none;transition:.12s}
   .chip:hover{border-color:var(--accent);color:var(--accent)}
   .chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 
